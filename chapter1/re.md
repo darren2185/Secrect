@@ -63,6 +63,7 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 > * re.U or re.UNICODE 则与ASCII码相对而言
 >
 > * re.DEBUG 显示调试信息
+>
 > * re.I or re.IGNORECASE  用作忽略大小写
 > * re.L or re.LOCALE 使\w，\W，\b，\B匹配取决于本地化，主要用bytes pattern
 > * re.M or re.MULTILINE 多行模式
@@ -80,7 +81,13 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 >
 > * re.fullmatch\(pattern, string, flags = 0\) 如果整串字符都匹配则返回match object,否则返回None
 >
-> * re.split\(pattern, string, maxsplit=0, flags=0\)
+> * re.split\(pattern, string, maxsplit=0, flags=0\) 根据正则表达式分割字符串
+>
+> * re.findall\(pattern, string, flags=0\)   从左到右扫描，然后返回所有符合正则式的字符列表
+>
+> * re.finditer\(pattern, string, flags=0\)  返回一个迭代器，其作用与re.findall\(\)类似
+>
+> *
 
 
 
