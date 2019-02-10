@@ -73,7 +73,7 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 >   b = re.compile(r'\d+\.\d*')
 >   ```
 >
->   re.search\(pattern, string, flags=0\)
+> * re.search\(pattern, string, flags=0\)
 
 
 
