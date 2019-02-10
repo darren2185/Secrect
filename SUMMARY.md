@@ -2,5 +2,5 @@
 
 * [Introduction](README.md)
 * [Python Library Reference](chapter1.md)
-  * string
+  * [string](chapter1/string.md)
 
