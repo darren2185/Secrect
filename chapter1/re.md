@@ -71,6 +71,7 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 > * re.M or re.MULTILINE 多行模式
 >
 > * re.S or re.DOTALL 使.能匹配任意字符
+>
 > * re.X or re.VERBOSE 主要为了编码pattern的排版清晰
 > * ```py
 >   a = re.compile(r"""\d+ # the integral part
@@ -94,13 +95,13 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 >
 > * re.subn\(pattern, repl, string, count = 0, flags=0\)
 >
-> * re.escape\(pattern\)  
+> * re.escape\(pattern\)
 >
 > * re.error\(msg, pattern=None, pos=None\)
 
 ## Regular Expression Objects
 
-
+### Match Objects
 
 
 
