@@ -50,12 +50,14 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 re.compile\(pattern,flags=0\)编译pattern并生成regular expression object，其能应用到match\(\)，search\(\)及其他方法中，而表达式的行为能受flags的值改变而调整
 
 执行流程如下：
-
+```py
 Prog = re.compile\(pattern\)
 
 Result = prog.match\(string\)
+# 与以下相当
+result = re.match\(pattern,string\)
+```
 
-与result = re.match\(pattern,string\)相当
 
 但如果预先编译了正则表达式，则后续应用能加快匹配速度
 
