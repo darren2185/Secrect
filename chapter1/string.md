@@ -1,5 +1,7 @@
 # string: Common string operations
 
+---
+
 ### class str
 
 class str\(object=''\)  
@@ -36,6 +38,7 @@ class str\(object=b'', encoding='utf-8', errors='strict'\)
 > * str.isalnum\(\) 判断具体字符是不是跟字母跟数据
 >
 > * str.isalpha\(\) 判断字符是不是为字母
+>
 > * str.isascii\(\) 判断字母是否为ascii码
 > * str.isdecimal\(\) 判断是否为数字
 > * str.isdigital\(\) 如果所有字符为数字或者至少一个字符为数字，则为True，否则为False,Numeric\_Type= Digit或者Numeric\_Type=Numeric
