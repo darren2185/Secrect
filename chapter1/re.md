@@ -65,6 +65,7 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 > * re.DEBUG 显示调试信息
 >
 > * re.I or re.IGNORECASE  用作忽略大小写
+>
 > * re.L or re.LOCALE 使\w，\W，\b，\B匹配取决于本地化，主要用bytes pattern
 > * re.M or re.MULTILINE 多行模式
 > * re.S or re.DOTALL 使.能匹配任意字符
@@ -87,7 +88,7 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 >
 > * re.finditer\(pattern, string, flags=0\)  返回一个迭代器，其作用与re.findall\(\)类似
 >
-> *
+> * re.sub\(pattern, repl, string, count=0, flags=0\)
 
 
 
