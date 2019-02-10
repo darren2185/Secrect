@@ -48,12 +48,30 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 模块中定义了几个函数、常量和一个异常
 
 > * re.compile\(pattern,flags=0\)编译pattern并生成regular expression object，其能应用到match\(\)，search\(\)及其他方法中，而表达式的行为能受flags的值改变而调整执行流程如下：
-```py
-Prog = re.compile\(pattern\)
-Result = prog.match\(string\)
-# 与以下相当
-result = re.match\(pattern,string\) 
-```
-但如果预先编译了正则表达式，则后续应用能加快匹配速度
-> * re.A
+>   ```py
+>   Prog = re.compile\(pattern\)
+>   Result = prog.match\(string\)
+>   # 与以下相当
+>   result = re.match\(pattern,string\)
+>   ```
+>
+>   但如果预先编译了正则表达式，则后续应用能加快匹配速度
+> * re.A or re.ASCII 使\w，\W，\b，\B，\d，\D，\s和\S只能匹配ASCII
+> * re.U or re.UNICODE 则与ASCII码相对而言
+> * re.DEBUG 显示调试信息
+> * re.I or re.IGNORECASE  用作忽略大小写
+> * re.L or re.LOCALE 使\w，\W，\b，\B匹配取决于本地化，主要用bytes pattern
+> * re.M or re.MULTILINE 多行模式
+> * re.S or re.DOTALL 使.能匹配任意字符
+> * re.X or re.VERBOSE 主要为了编码pattern的排版清晰
+> * ```py
+>   a = re.compile(r"""\d+ # the integral part
+>                      \.  # the decimal point
+>                      \d* # some fractional digitals""", re.X)
+>   b = re.compile(r'\d+\.\d*')
+>   ```
+
+
+
+
 
