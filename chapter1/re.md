@@ -163,7 +163,7 @@ Match object只有True值，否则为None,如match\(\)或者search\(\)方法返�
 > m.group(1) #c3
 > ```
 >
-> \*
+> *
 
 
 
