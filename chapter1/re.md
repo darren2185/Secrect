@@ -119,6 +119,7 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 > pattern.match("dog")   # No match as "o" is not at the start of "dog".
 > pattern.match("dog",1) # Match as "o" is the 2nd character of "dog" 
 > <re.Match object; span=(1,2),match='o'>
+> #如果要定位字符中任何位置时，请使用search()
 > ```
 
 ### Match Objects
