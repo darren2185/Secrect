@@ -194,7 +194,11 @@ Match object只有True值，否则为None,如match\(\)或者search\(\)方法返�
 >
 > * Match.span\(\[group\]\) 返回一组（开始位置，结束位置）值
 >
-> *
+> * Match.pos \ Match.endpos 匹配字符开始位置跟结束位置
+> * Match.lastindex 
+> * Match.lastgroup
+> * Match.re
+> * Match.string
 
 
 
