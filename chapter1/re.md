@@ -154,7 +154,15 @@ Match object只有True值，否则为None,如match\(\)或者search\(\)方法返�
 > m.group(1)   #'Isaac’
 > m.group(2)   #'Newton"
 > m.group(1,2) #('Isaac', 'Newton')
+>
+> m = re.match(r"(?P<fist_name>\w+) (?P<last_name>\w+)',"Malcolm Reynolds")
+> m.group('first_name') #Malcolm
+> m.group('last_name')  # Reynolds
+>
+>
 > ```
+>
+> *
 
 
 
