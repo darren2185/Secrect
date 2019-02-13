@@ -109,10 +109,17 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 > ```py
 > pattern = re.compile(r'd')
 > pattern.search('dog')    # <re.Match object; span=(0,1), match='d'>
->
+> type(pattern.search('dog',1)) # NoneType
 > ```
 >
-> * slkfsfjslkfd
+> * Pattern.match\(string\[,pos\[,endpos\]\]\) 如果0或者更多字符在字符开头匹配此正则表达式，则返回match object,如果不匹配则返回None，pos表示开始位置，endpos表示结束位置
+>
+> ```py
+> pattern = re.compile("o")
+> pattern.match("dog")   # No match as "o" is not at the start of "dog".
+> pattern.match("dog",1) # Match as "o" is the 2nd character of "dog" 
+> <re.Match object; span=(1,2),match='o'>
+> ```
 
 ### Match Objects
 
