@@ -100,7 +100,11 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 >
 > * re.error\(msg, pattern=None, pos=None\)
 
-## Regular Expression Objects
+### Regular Expression Objects
+
+经编译后的REO对象支持以下方法和属性
+
+> * Pattern.search\(string\[,pos\[,endpos\]\]\) 扫描字符串寻找第一处满足正则式，并返回match object，返回None则没有找到满足正则式的字符串
 
 ### Match Objects
 
