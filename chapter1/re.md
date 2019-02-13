@@ -168,6 +168,20 @@ Match object只有True值，否则为None,如match\(\)或者search\(\)方法返�
 > ```py
 > m[0],m[1]
 > ```
+>
+> m.groups\(default=None\) 返回tuple列表，包含所有组
+>
+> ```py
+> m = re.match(r'(\d+)\.(\d+)','24.1632') 
+> m.gropus() #('24','1632')
+> ```
+>
+> * Match.groupdict\(default=None\) 返回一个字典
+>
+> ```py
+> m = re.match(r"(?P<first_name>\w+) (?P<last_name>\w+)","Malcolm Reynolds")
+> m.groupdict() #{'first_name':'Malcolm','last_name':'Reynolds'}
+> ```
 
 
 
