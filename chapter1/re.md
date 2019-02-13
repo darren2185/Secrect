@@ -73,6 +73,7 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 > * re.S or re.DOTALL 使.能匹配任意字符
 >
 > * re.X or re.VERBOSE 主要为了编码pattern的排版清晰
+>
 > * ```py
 >   a = re.compile(r"""\d+ # the integral part
 >                      \.  # the decimal point
