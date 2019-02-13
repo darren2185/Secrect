@@ -159,10 +159,11 @@ Match object只有True值，否则为None,如match\(\)或者search\(\)方法返�
 > m.group('first_name') #Malcolm
 > m.group('last_name')  # Reynolds
 >
->
+> m = re.match(r'(..)+','a1b2c3')
+> m.group(1) #c3
 > ```
 >
-> *
+> \*
 
 
 
