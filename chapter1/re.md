@@ -182,6 +182,19 @@ Match object只有True值，否则为None,如match\(\)或者search\(\)方法返�
 > m = re.match(r"(?P<first_name>\w+) (?P<last_name>\w+)","Malcolm Reynolds")
 > m.groupdict() #{'first_name':'Malcolm','last_name':'Reynolds'}
 > ```
+>
+> * Match.start\(\[group\]\)
+> * Match.end\(\[group\]\) 返回正则表达式中的组匹配的子字符串在原字符串中的起始与结束位置，默认值为0示例：
+>
+>   ```
+>   email="tony@tiremove_thisget.net"
+>   m = re.search("remove_this",email)
+>   email[:m.start()] +email[m.end():] #tony@tiger.net
+>   ```
+>
+> * Match.span\(\[group\]\) 返回一组（开始位置，结束位置）值
+>
+> *
 
 
 
