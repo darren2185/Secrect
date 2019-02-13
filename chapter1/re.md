@@ -121,8 +121,40 @@ re模块提供正则表达式来匹配操作类似于Perl，模式字符与字�
 > <re.Match object; span=(1,2),match='o'>
 > #如果要定位字符中任何位置时，请使用search()
 > ```
+>
+> * Pattern.split\(string, maxsplit=0\)  与re.split\(\)相同，区别在于需要先编译正则式
+> * Pattern.findall\(string\[,pos\[,endpos\]\]\) 和re.findall\(\)相同
+> * Pattern.finditer\(string\[,pos\[,endpos\]\]\) 和re.finditer\(\)相同
+> * Pattern.sub\(repl, string,count=0\)
+> * Pattern.subn\(repl,string,count=0\)
+> * Pattern.flags
+> * Pattern.groups  在模式中的组数量
+> * Pattern.groupindex 组中位置
+> * Pattern.pattern  返回正则式
 
 ### Match Objects
+
+Match object只有True值，否则为None,如match\(\)或者search\(\)方法返回值，match object支持以下方法：
+
+> * Match.expand\(template\) 该方法利用一个类似sub方法，将template中用反斜杠标示的数字或者组名替代为相应的组中值
+>
+> ```py
+> m = re.match(r'(?P<first_name>\w+) (?P<last_name>\w+)','Eric Brown')
+> print(m.groups()) 'Eric' 'Brown'
+> print(m.expand(r'His name is \1 \2)) # His name is Eric Brown
+> print(m.expand(r'His name is \g<1> \g<2>')) # His name is Eric Brown
+> print(m.expand(r'His name is \g<first_name> \g<last_name>')) # His name is Eric Brown
+> ```
+>
+> * Match.group\(\[group1,...\]\) 如果参数为单个数值则返回相应坐标的值，如果参数为多个值，则返回tuple列表，当然所赋予参数均要满足小于或者等于最大groups数
+>
+> ```py
+> m = re.match(r'(\w+) (\w+)',"Isaac Newton, physicist")
+> m.group(0)   #'Isaac Newton'
+> m.group(1)   #'Isaac’
+> m.group(2)   #'Newton"
+> m.group(1,2) #('Isaac', 'Newton')
+> ```
 
 
 
