@@ -216,8 +216,9 @@ valid = re.compile(r"^[a2-9tjqk]{5}$")
 displaymatch(valid.match("akt5q"))  #Valid  "<Match:'akt5q', groups=()>"
 displaymatch(valid.match('akt5e'))  #Invalid
 displaymatch(valid.match('akt'))    #Invalid
-displaymatch(valid.match("727ak"))  #Valid  "<Match:'727ak', groups=()>"
+displaymatch(valid.match("727ak"))  #Valid  "<Match:'727ak', groups=()>"')
 
+pair = re.compile(r".*(.).*\1")
 
 ```
 
