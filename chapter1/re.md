@@ -218,7 +218,10 @@ displaymatch(valid.match('akt5e'))  #Invalid
 displaymatch(valid.match('akt'))    #Invalid
 displaymatch(valid.match("727ak"))  #Valid  "<Match:'727ak', groups=()>"')
 
-pair = re.compile(r".*(.).*\1")
+pair = re.compile(r".*(.).*\1")  #匹配重复字符
+displaymatch(pair.match('717ak'))  # '<Match: '717', groups=('7',)>'
+displaymatch(pair.match('718ak'))  # none
+displaymatch(pair.match('354aa'))  # '<Match: 'aa', groups=('a',)>'
 
 ```
 
