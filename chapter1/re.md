@@ -227,5 +227,35 @@ pair.match('717ak').group(1)   # '7'
 pair.match('717ak').group(0)   # '717'
 ```
 
+| scanf\(\) Token | Regular Expression |
+| :---: | :---: |
+| %c | . |
+| %5c | .{5} |
+| %d | \[-+\]?\d+ |
+| %e,%E,%f,%g | \[-+\]?\(\d+\(\.\d\*\)?\|\.\d+\)\(\[eE\]\[-+\]?\d+\)? |
+| %i | \[-+\]?\(0\[xX\]\[\dA-Fa-f\]+\|0\[0-7\]\*\|\d+\) |
+| %o | \[-+\]?\[0-7\]+ |
+| %s | \S+ |
+| %u | \d+ |
+| %x,%X | \[-+\]?\(0\[xX\]\)?\[\dA-Fa-f\]+ |
+
+#### Making a Phonebook
+
+```py
+text = """Ross McFluff: 834.345.1254 155 Elm Street
+Ronald Heathmore: 892.345.3428 436 Finley Avenue
+Frank Burger: 925.541.7625 662 South Dogwood Way
+
+
+Heather Albrecht: 548.326.4584 919 Park Place"""
+entries = re.split(r'\n+',text)
+[re.split(r':? ', entry, 3) for entry in entries]
+ #[['Ross', 'McFluff', '834.345.1254', '155 Elm Street'],
+ #['Ronald', 'Heathmore', '892.345.3428', '436 Finley Avenue'],
+ #['Frank', 'Burger', '925.541.7625', '662 South Dogwood Way'],
+ #['Heather', 'Albrecht', '548.326.4584', '919 Park Place']]
+
+```
+
 
 
