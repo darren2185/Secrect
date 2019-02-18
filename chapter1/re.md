@@ -223,6 +223,8 @@ displaymatch(pair.match('717ak'))  # '<Match: '717', groups=('7',)>'
 displaymatch(pair.match('718ak'))  # none
 displaymatch(pair.match('354aa'))  # '<Match: 'aa', groups=('a',)>'
 
+pair.match('717ak').group(1)   # '7'
+pair.match('717ak').group(0)   # '717'
 ```
 
 
