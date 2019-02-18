@@ -232,7 +232,7 @@ pair.match('717ak').group(0)   # '717'
 | %c | . |
 | %5c | .{5} |
 | %d | \[-+\]?\d+ |
-| %e,%E,%f,%g | \[-+\]?\(\d+\(\.\d\*\)?\|\.\d+\)\(\[eE\]\[-+\]?\d+\)? |
+| %e,%E,%f,%g | \[-+\]?\(\d+\(.\d\*\)?\|.\d+\)\(\[eE\]\[-+\]?\d+\)? |
 | %i | \[-+\]?\(0\[xX\]\[\dA-Fa-f\]+\|0\[0-7\]\*\|\d+\) |
 | %o | \[-+\]?\[0-7\]+ |
 | %s | \S+ |
@@ -254,7 +254,29 @@ entries = re.split(r'\n+',text)
  #['Ronald', 'Heathmore', '892.345.3428', '436 Finley Avenue'],
  #['Frank', 'Burger', '925.541.7625', '662 South Dogwood Way'],
  #['Heather', 'Albrecht', '548.326.4584', '919 Park Place']]
+```
 
+#### Text Munging
+
+```py
+def repl(m):
+    inner_words = list(m.group(2))
+    random.shuffle(inner_words)
+    return m.group(1) + "".join(inner_words) + m.group(3)
+
+re.sub(r'(\w)(\w+)(\w)',repl,text)
+# 'Perossofr Aobledmalk, psleae rproet yuor abecness propltmy.'
+```
+
+#### Finding all Adverbs
+
+```py
+text = "He was carefully disguised but captured quickly by police."
+for m in re.finditer(r'\w+ly',text):
+    print('%02d-%02d: %s'%(m.start(), m.end(),m.group(0)))
+    
+# 07-16: carefully
+# 40-47: quickly
 ```
 
 
