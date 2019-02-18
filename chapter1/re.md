@@ -274,7 +274,7 @@ re.sub(r'(\w)(\w+)(\w)',repl,text)
 text = "He was carefully disguised but captured quickly by police."
 for m in re.finditer(r'\w+ly',text):
     print('%02d-%02d: %s'%(m.start(), m.end(),m.group(0)))
-    
+
 # 07-16: carefully
 # 40-47: quickly
 ```
