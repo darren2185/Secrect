@@ -201,6 +201,7 @@ Match object只有True值，否则为None,如match\(\)或者search\(\)方法返�
 > * Match.lastgroup
 >
 > * Match.re
+>
 > * Match.string
 
 #### Regular Expression Examples
@@ -216,6 +217,7 @@ displaymatch(valid.match("akt5q"))  #Valid  "<Match:'akt5q', groups=()>"
 displaymatch(valid.match('akt5e'))  #Invalid
 displaymatch(valid.match('akt'))    #Invalid
 displaymatch(valid.match("727ak"))  #Valid  "<Match:'727ak', groups=()>"
+
 
 ```
 
