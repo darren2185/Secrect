@@ -23,5 +23,7 @@
 
 可用于创建HTML表，将显示以行对比行，左右对照，此表能生成全部或者上下文差异模式
 
-\_\__init\_\_\(tabsize=8, wrapcolumn=None, linejunk=None, charjunk=ISCHARACTER\_JUNK\)_
+\__\_init\_\_\(tabsize=8, wrapcolumn=None, linejunk=None, charjunk=ISCHARACTER\_JUNK\)_实例化HtmlDiff， tabsize为可选项，默认8个空字符
+
+
 
