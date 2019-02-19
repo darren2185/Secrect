@@ -16,36 +16,27 @@ numpy是科学计算的基本包，其最大对象为ndarray，必须熟悉其�
 有如下几种方法创建
 
 1. 通过array方法，我们可以创建存储在python list和tuple中的数组对象，注意经常出错的问题在传参数时，非iterate对象（list, tuple等）
-
+```py
    import numpy as np
-
-   a = np.array\(\[2,3,4\]\)   \# a  -&gt; array\(\[2,3,4\]\)
-
+   a = np.array\(\[2,3,4\]\)   \# a ; array\(\[2,3,4\]\)
    a.dtype      \# dtype\('int64'\)
-
    b = np.array\(\[1.2, 3.5, 5.1\]\)
-
    b.dtype      \# dtype\('float64'\)
+   b = np.array\(\[\(1.5,2,3\),\(4,5,6\)\]\)
+   b
 
-b = np.array\(\[\(1.5,2,3\),\(4,5,6\)\]\)
+   \# array\(\[\[1.5, 2., 3.\],
+             \[4., 5., 6.\]\]\)
 
-b
 
-\# array\(\[\[1.5, 2., 3.\],
+   c = np.array\(\[\[2,3\],\[3,4\]\]， dtype=complex\)
 
+   c
+   \# array\(\[1 + 0.j, 2. + 0.j\],
+   \#       \[3.+ 0.j, 4. + 0.j\]\]\)
 ```
-       \[4., 5., 6.\]\]\)
-```
 
-c = np.array\(\[\[2,3\],\[3,4\]\]， dtype=complex\)
-
-c
-
-\# array\(\[1 + 0.j, 2. + 0.j\],
-
-\#       \[3.+ 0.j, 4. + 0.j\]\]\)
-
-1. 通常具体数据元素数值是不知晓的，但是其数据类型大小是知道的，故Numpy提供了几个方法创建数组， zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64:
+2. 通常具体数据元素数值是不知晓的，但是其数据类型大小是知道的，故Numpy提供了几个方法创建数组， zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64:
 
    ```py
    np.zeros((3,4))
@@ -66,20 +57,20 @@ c
           [5.30498948e-313,3.14673309e-307,1.00000000e+000]])
    ```
 
-2. zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64
+3. zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64
 
    ```py
    dsfdsfds
    ```
 
-3. sfsdfsfsd
+4. sfsdfsfsd
 
    ```py
 
    ```
 
-3. zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64
-4. zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64
+5. zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64
+6. zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64
 
 
 
