@@ -29,7 +29,7 @@ wrapcolumen为可选项，描述一行字符为多少后自动换行，默认值
 
 linejunk和charjunk均为可选项，传递给ndiff\(\)函数，用于生成左右差异对比信息，关于ndiff\(\)，请见下
 
-> * _make\_file\(fromlines, tolines, fromdesc='', todesc='', context=False, numlines=5, \*, charset='utf-8'\) _对比fromlines和tolines将返回一个字符串,\(HTML文件含差异对比信息\)
+> * _make\_file\(fromlines, tolines, fromdesc='', todesc='', context=False, numlines=5, \*, charset='utf-8'\) _对比fromlines和tolines将返回一个字符串,\(HTML文件含差异对比信息\)，fromdesc和todesc为可选参数，描述from/to文件表头字符，context和numlines为可选参数
 
 
 
