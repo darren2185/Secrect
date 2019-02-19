@@ -19,14 +19,16 @@ numpy是科学计算的基本包，其最大对象为ndarray，必须熟悉其�
  
    ```py
    import numpy as np  
-   a = np.array([2,3,4])   # a ; array([2,3,4])  
+   a = np.array([2,3,4])   
+   a  
+   # array([2,3,4])  
    a.dtype      # dtype('int64')  
    b = np.array([1.2, 3.5, 5.1])  
    b.dtype      # dtype('float64')  
    b = np.array([(1.5,2,3),(4,5,6)])  
    b
    # array([[1.5, 2., 3.],  
-             [4., 5., 6.]])
+            [4., 5., 6.]])
    c = np.array([[2,3],[3,4]]， dtype=complex)
    c  
    # array([1 + 0.j, 2. + 0.j],  
