@@ -6,4 +6,5 @@
   * [json](chapter1/json.md)
   * [Collections](chapter1/collections.md)
   * [re](chapter1/re.md)
+  * [difflib](chapter1/difflib.md)
 
