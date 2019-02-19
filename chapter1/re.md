@@ -279,5 +279,89 @@ for m in re.finditer(r'\w+ly',text):
 # 40-47: quickly
 ```
 
+#### Writing a Tokenizer
+
+```py
+import collections
+import re
+
+Token = collections.namedtuple('Token', ['type', 'value', 'line', 'column'])
+
+# TODO: 熟悉regular Expression对于代码的读取及定义
+
+def tokenize(code):
+    keywords = {"IF", "THEN", "ENDIF", "FOR", "NEXT", "GOSUB", "RETURN"}
+
+    token_specification =[
+        ('NUMBER', r'\d+(\.\d*)?'),  # Integer or decimal number
+        ('ASSIGN', r':='),           # Assignment operator
+        ('END', ';'),                # Statement terminator
+        ('ID', r'_?[A-Za-z]+'),        # Identifiers
+        ('OP', r'[+\-*/]'),
+        ('NEWLINE', r'\n'),          # Line endings
+        ('SKIP', r'[ \t]+'),          # Skip over spaces and tabs
+        ('MISMATCH', r'.')           # Any other character
+    ]
+
+    tok_regex = '|'.join('(?P<%s>%s)' % pair for pair in token_specification)
+    line_num = 1
+    line_start = 0
+
+    for mo in re.finditer(tok_regex, code):
+
+        kind = mo.lastgroup
+        value = mo.group()
+        column = mo.start() - line_start
+
+        if kind == 'NUMBER':
+            value = float(value) if '.' in value else int(value)
+        elif kind == 'ID' and kind in keywords:
+            kind = value
+        elif kind == 'NEWLINE':
+            line_start = mo.end()
+            line_num += 1
+        elif kind == 'SKIP':
+            continue
+        elif kind == 'MISMATCH':
+            raise RuntimeError(f'{value!r} unexpected on line {line_num}')
+
+        yield Token(kind, value, line_num, column)
+
+
+statements = '''if quantity then
+        total:= total+piece * quantity;
+        tax := _price * 0.05
+    endif;
+    '''
+
+for token in tokenize(statements):
+    print(token)
+
+'''
+Token(type='ID', value='if', line=1, column=0)
+Token(type='ID', value='quantity', line=1, column=3)
+Token(type='ID', value='then', line=1, column=12)
+Token(type='NEWLINE', value='\n', line=2, column=16)
+Token(type='ID', value='total', line=2, column=8)
+Token(type='ASSIGN', value=':=', line=2, column=13)
+Token(type='ID', value='total', line=2, column=16)
+Token(type='OP', value='+', line=2, column=21)
+Token(type='ID', value='piece', line=2, column=22)
+Token(type='OP', value='*', line=2, column=28)
+Token(type='ID', value='quantity', line=2, column=30)
+Token(type='END', value=';', line=2, column=38)
+Token(type='NEWLINE', value='\n', line=3, column=39)
+Token(type='ID', value='tax', line=3, column=8)
+Token(type='ASSIGN', value=':=', line=3, column=12)
+Token(type='ID', value='_price', line=3, column=15)
+Token(type='OP', value='*', line=3, column=22)
+Token(type='NUMBER', value=0.05, line=3, column=24)
+Token(type='NEWLINE', value='\n', line=4, column=28)
+Token(type='ID', value='endif', line=4, column=4)
+Token(type='END', value=';', line=4, column=9)
+Token(type='NEWLINE', value='\n', line=5, column=10)
+'''
+```
+
 
 
