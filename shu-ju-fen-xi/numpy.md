@@ -110,5 +110,21 @@ print(c)
 
 如果需要显示特别大量数据的数组时，Numpy将会跳过中间部分，取而代之以省略号显示。 我们可以同np.set\_printoptoins\(threshold=np.nan\)函数来迫使打印全部数据信息。
 
+#### 基本操作
+
+算术操作可以如平常一样使用
+
+```py
+a = np.array([20,30,40,50])
+b = np.arange(4)  # array([0,1,2,3])
+
+c = a - b   # array([20,29,38,47])
+b**2   # array([0,1,4,9])
+
+10 * np.sin(a)  # array([ 9.12945251, -9.88031624,  7.4511316 , -2.62374854])
+
+a < 35   # array([True, True, False, False])
+```
+
 
 
