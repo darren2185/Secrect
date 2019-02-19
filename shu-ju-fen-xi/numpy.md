@@ -84,7 +84,29 @@ numpy是科学计算的基本包，其最大对象为ndarray，必须熟悉其�
 * The second-to-last is printed from top to bottom
 * The rest are also printed from top to bottom, with each slice separated from the next by an empty line.
 
+一维将呈现一行，二维呈现矩阵，三维则呈现为列表矩阵
 
+```py
+a = np.arange(6)
+print(a)   # [0,1,2,3,4,5]
+
+b = np.arange(12).reshape(4,3)
+print(b)
+
+# [[0,1,2],
+   [3,4,5],
+   [6,7,8],
+   [9,10,11]])
+c = np.arange(24).reshape(2,3,4)
+print(c)
+
+# [[[ 0  1  2  3]
+   [ 4  5  6  7]
+   [ 8  9 10 11]]
+  [[12 13 14 15]
+   [16 17 18 19]
+   [20 21 22 23]]]
+```
 
 
 
