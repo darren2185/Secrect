@@ -7,4 +7,6 @@
   * [Collections](chapter1/collections.md)
   * [re](chapter1/re.md)
   * [difflib](chapter1/difflib.md)
+* [数据分析](shu-ju-fen-xi.md)
+  * [numpy](shu-ju-fen-xi/numpy.md)
 
