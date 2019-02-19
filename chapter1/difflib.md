@@ -21,7 +21,7 @@
 
 ##### class difflib.HtmlDiff
 
-可用于创建HTML表
+可用于创建HTML表，将显示以行对比行，左右对照，此表能生成全部或者上下文差异模式
 
-
+\_\__init\_\_\(tabsize=8, wrapcolumn=None, linejunk=None, charjunk=ISCHARACTER\_JUNK\)_
 
