@@ -4,11 +4,24 @@
 
 ##### class difflib.SequenceMatcher
 
+这是一个对比任何类型的弹性类，数据类型需能可hashable，
 
+##### class difflib.Differ
 
+此类用于对于对比行文本，并且能生成可读性差异信息， Differ使用SequenceMatcher去对比行文本序列，也能对比相似行字符序列，对比后信息显示：
 
+| Code | Meaning |
+| :---: | :---: |
+| '- ’ | line unique to sequence 1 |
+| '+ ' | line unique to sequence 2 |
+| '  ' | line common to both sequences |
+| '? ' | line not present in either inputsequence |
 
+行以？开始，需试图集中眼神区分差异，且都不在两者之间显示，类似于这样行含有tab字符的，容易造成混淆
 
+##### class difflib.HtmlDiff
+
+可用于创建HTML表
 
 
 
