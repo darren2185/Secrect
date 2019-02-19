@@ -35,7 +35,7 @@ numpy是科学计算的基本包，其最大对象为ndarray，必须熟悉其�
    #       [3.+ 0.j, 4. + 0.j]])
    ```
 
-2. 通常具体数据元素数值是不知晓的，但是其数据类型大小是知道的，故Numpy提供了几个方法创建数组， zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64:
+2. 通常具体数据元素数值是不知晓的，但是其数据类型大小是知道的，故Numpy提供了几个方法创建数组， zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64:\(ones_like\(\), empty\\_like\(\), _\)
 
    ```py
     np.zeros((3,4))
@@ -76,9 +76,15 @@ numpy是科学计算的基本包，其最大对象为ndarray，必须熟悉其�
    f = np.sin(x)
    ```
 
-5. zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64
+#### 数组显示
 
-6. zeros创建所有元素为0的数组， ones则其所有元素都为1，还有empty函数其元素值为随机，其dtype通常为float64
+当你需要显示numpy数组时，Numpy非常轻松将以嵌套列表的方式呈现，当然以如下布局方式：
+
+* The last axis is printed from left to right
+* The second-to-last is printed from top to bottom
+* The rest are also printed from top to bottom, with each slice separated from the next by an empty line.
+
+
 
 
 
