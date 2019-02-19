@@ -32,6 +32,15 @@ linejunk和charjunk均为可选项，传递给ndiff\(\)函数，用于生成左�
 > * _make\_file\(fromlines, tolines, fromdesc='', todesc='', context=False, numlines=5, \*, charset='utf-8'\) _对比fromlines和tolines将返回一个字符串,\(HTML文件含差异对比信息\)，fromdesc和todesc为可选参数，描述from/to文件表头字符，context和numlines为可选参数，设context为真时，则前后对比差异将会显示，默认值为FALSE，显示所有文件
 > * make_table\(fromlines, tolines, fromdesc='', todesc='',context=False, numlines=5\) 与make\_file类似，将生成包含差异化信息的HTML表格_
 > * difflib.context\_diff\(a, b, fromfile='', tofile='', fromfiledate='', tofiledate='', n=3, lineterm='\n'\) 对比a和b，返回上下文格式的差异信息，
+> * difflib.get\\__close\\_matches\(word, possibilities, n=3, cutoff=0.6\) 返回尽可能匹配所谓的good enough列表清单，word为需要比对对象， possibilities为具有可能性的清单，n必须大于0，cutoff为float对象。_
+
+
+
+
+
+
+
+
 
 
 
