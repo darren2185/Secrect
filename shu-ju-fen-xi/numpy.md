@@ -258,7 +258,7 @@ c = np.array([[[0,1,2],[10,11,12]],
 c.shape  # (2,2,3)
 c[1,...] # array([[100, 101, 102],     is equivalent with c[1,:,:]
          # [110, 111, 112]])
-         
+
 c[...,2] # array([[  2,  12],    is equivalent with c[:,:,2]
          #        [102, 112]])
 ```
@@ -273,7 +273,23 @@ c[...,2] # array([[  2,  12],    is equivalent with c[:,:,2]
 a.ravel()  # 和a.flat()函数一样，展平
 a.reshape(6,2)  
 a.T    # 行列转置
+```
 
+a.reshape与a.resize的不同，在于reshape生成一个改变后的新数组，resize则将原有数组的改变
+
+##### 堆叠不同数组
+
+```py
+a = np.floor(10 * np.random.random((2,2))
+b = np.floor(10 * np.random.random((2,2))
+np.vstack(a, b)
+np.hstack(a, b)
+```
+
+##### 分割数组
+
+```py
+np.hsplit(a, (3,4))  # 从3到4列分割出来
 ```
 
 
