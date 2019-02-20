@@ -187,5 +187,44 @@ a.min() # 0.14295097938903178
 a.max() # 0.8159954326659985
 ```
 
+还可以通过其不同轴向axis进行一元操作
+
+```py
+b = np.arange(12).reshape(3,4)
+# array([[ 0,  1,  2,  3],
+#        [ 4,  5,  6,  7],
+#        [ 8,  9, 10, 11]])
+
+b.sum(axis=0) # column
+# array([12, 15, 18, 21])
+b.sum(axis=1) # row
+# array([ 6, 22, 38])
+
+b.min(axis=1) # row  array([0,4,8])
+b.cumsum(axis=1)  # row向元素累加
+```
+
+#### 一般函数
+
+Numpy提供了些熟悉的数学函数，例如sin, cos和exp等，在Numpy中被称为一般函数“ufunc", 及计算后结果将返回一个新的array
+
+```py
+b = np.arange(3)
+np.exp(b)
+# array([1.        , 2.71828183, 7.3890561 ])
+np.sqrt(b)
+# array([0.        , 1.        , 1.41421356])
+np.add(b, np.array([2., -1., 4.]))
+# array([2., 0., 6.])
+```
+
+其他相关函数，待下一步完成
+
+##### 索引、切片和迭代
+
+一维数组能索引，切片和迭代，类似lists及其他python序列对象
+
+
+
 
 
